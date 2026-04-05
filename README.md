@@ -1,24 +1,88 @@
+# Course Feedback System (CFS)
 
-**Assessment 1.2 (Total Marks **20**)**
+## Project Overview
+A full-stack web application for managing course feedback between students, faculty, and administrators. Built with Node.js, React.js, and MongoDB.
 
-Assignment: **Software requirements analysis and design (**Full-Stack CRUD Application Development with DevOps Practices**)**
+## Public URL
+http://16.176.219.14
 
+## Test Credentials
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@test.com | admin123 |
+| Faculty | faculty@test.com | faculty123 |
+| Student | student@test.com | student123 |
 
----
+## Tech Stack
+- **Frontend:** React.js
+- **Backend:** Node.js + Express.js
+- **Database:** MongoDB Atlas
+- **Process Manager:** PM2
+- **Web Server:** Nginx
+- **CI/CD:** GitHub Actions
+- **Deployment:** AWS EC2
 
-**Objective**
+## Features
+### Student
+- View enrolled courses
+- Submit feedback with star ratings
+- Edit and delete own feedback
 
-For this assessment, you have already been assigned a project. Your task is to develop a system that implements CRUD (Create, Read, Update, Delete) operations based on the selected project. The system should include both a user panel and an admin panel. Depending on the nature of your chosen project, you may decide how many CRUD operations are required to support the functionality of the system. You have been provided with a starter project that includes user authentication using Node.js, React.js, and MongoDB, your should extend this application based on your assigned project requirements. Ensure that the implemented features are appropriate and meaningful for your selected project. Your project should include the following:
-In this assignment you will complete the following tasks:
+### Faculty
+- View assigned courses
+- View anonymous student feedback
+- View course analytics
 
-* **Basic Version Control using GitHub**
-* **Development, CI/CD Integration for Automated Deployment**
-* **Project report**
+### Admin
+- Full CRUD for users
+- Full CRUD for courses
+- Manage enrollments
+- View all feedback
 
- 
----
+## Project Setup Instructions
 
-**GitHub link of the starter project: **[https://github.com/nahaQUT/sampleapp_IFQ636.git](https://github.com/nahaQUT/sampleapp_IFQ636.git)
+### Prerequisites
+- Node.js v22
+- MongoDB Atlas account
+- Git
 
----
+### Local Setup
 
+**Step 1: Clone the repository**
+git clone https://github.com/arjunror/Course-Feedback-System.git
+cd Course-Feedback-System
+**Step 2: Backend setup**
+cd backend
+npm install
+**Step 3: Create .env file in backend folder**
+MONGO_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/coursefeedback?appName=Cluster0
+JWT_SECRET=your_jwt_secret
+PORT=5001
+**Step 4: Start backend**
+npm start
+**Step 5: Frontend setup**
+cd frontend
+npm install
+npm start
+**Step 6: Open browser**
+http://localhost:3000
+
+## GitHub Repository
+https://github.com/arjunror/Course-Feedback-System
+
+## EC2 Instance
+- Public IP: 16.176.219.14
+- Backend runs on port 5001
+- Frontend runs on port 3000
+- Nginx configured on port 80
+
+## CI/CD Pipeline
+- Automated testing with Mocha/Chai
+- Automatic deployment via GitHub Actions
+- Self-hosted runner on AWS EC2
+- Triggers on push to main branch
+
+## Branching Strategy
+- main — production branch
+- feature-feedback — backend CRUD features
+- feature-frontend-clean — frontend pages
